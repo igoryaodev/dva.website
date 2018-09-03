@@ -1,0 +1,238 @@
+.GlobalHeaderResize{
+  position: relative;
+}
+//search
+.searchRow{
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 25px;
+}
+.searchBar{
+  position: relative;
+  width: 100%;
+  min-width: 40px;
+  img{
+    border: 0 none;
+    display: inline-block;
+    height: 10px;
+    overflow: hidden;
+    position: absolute;
+    right: 14px;
+    top: 4px;
+    width: 10px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  input[type="search"]{
+    display: none;
+    width: 100px !important;
+    height: 17px !important;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    position: absolute;
+    right: 10px;
+  }
+}
+.GlobalHeader{
+  .menuSet{
+    display: none;
+  }
+  position: relative;
+  z-index: 999;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0.7em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 10px 0;
+  // box-shadow: 1px 1px 2px #ddd;
+  .logo{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-end;
+    .langCN{
+      padding-left: 4px;
+      cursor: pointer;
+    }
+    .langEN{
+      padding-left: 4px;
+      cursor: pointer;
+    }
+  }
+  .menu{
+    display: flex;
+    justify-content: flex-start;
+    opacity: 0.8;
+    padding-right: 20px;
+    .subMenu{
+      padding: 5px 15px;
+      line-height: 18px;
+      position: relative;
+      .subMenuRow{
+        display: none;
+        position: absolute;
+        top: 23px;  
+        left: 0;
+        z-index: 999999;
+        background-color: #333;
+        list-style: none;
+        margin: 0;
+        padding: 20px 0;
+        text-transform: uppercase;
+        li{
+          padding: 4px 15px;
+          cursor: pointer;
+          min-width: 106.5px;
+          &:hover{
+            background-color: #000;
+          }
+        }
+        div,a{
+          color:#fff;
+          white-space: nowrap;
+        }
+      }
+      &:hover{
+        background-color: #333;
+        color:#fff;
+        .subMenuRow{
+          display: block;
+        }
+      }
+    }
+  }
+}
+.HeaderSmall{
+  margin: 0 -20px;
+  .menuSet{
+    width: 200px;
+    height: 35px;
+    color:#862d2c;
+    text-align: center;
+    line-height: 35px;
+    position: relative;
+    z-index: 999999;
+    padding: 0 20px;
+    background-color: #fff;
+    .toggleIcon{
+      display: flex;
+      width: 100%;   
+    }
+  }
+  .menuBox{
+    box-shadow: 2px 2px 2px #ddd;
+  }
+  .menu{
+    display: none;
+  }
+  .menu[data-show="true"]{
+    display: block;
+  }
+  .menu[data-show="false"]{
+    display: none;
+  }
+
+  .logo{
+    display: flex;
+    .langCN{
+      margin: 0 4px;
+    }
+    .langCN,
+    .langEN{
+     display: flex;
+      align-items: flex-end;
+    }
+    img{
+      width: 200px;
+      height: auto;
+    }
+  }
+  .smallMenu{
+    height: 30px;
+    width: 200px;
+    .subMenuRow{
+      display: none;
+    }
+    div[data-role="true"]{
+      background-color: #333;
+      opacity: 0.9;
+      div[data-menu="true"],
+      li,a{
+        color:#fff !important;
+      }
+      ul{
+        display: block !important;
+      }
+    }
+
+    .menu{
+      position: relative;
+      top: 30px;
+      left: 0;
+      z-index: 99999;
+      background-color: #fff;
+      .mainMenuItem{
+        text-align: center;
+        font-size: 12px;
+        color:#862d2c;
+        height: 30px;
+        line-height: 30px;
+        border-top: 1px solid #862d2c;
+      }
+      ul{
+        padding-left: 0;
+      }
+      ul,li{
+        list-style: none;
+        text-align: center;
+        margin:0;
+        font-size: 12px;
+      }
+      a,li{
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 800px){
+
+}
+@media (max-width: 880px){
+
+}
+@media (max-width: 960px){
+
+}
+@media (max-width: 1024px){
+  .HeaderLarge{
+    display: none;
+  }
+  .HeaderSmall{
+    display: block;
+  }
+  .searchRow{
+    top: 10px !important;
+  }
+}
+@media (min-width: 1024px){
+  .HeaderLarge{
+    display: block;
+  }
+  .HeaderSmall{
+    display: none;
+  }
+}

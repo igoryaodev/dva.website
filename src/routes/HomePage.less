@@ -1,0 +1,319 @@
+.swiperImage{
+  width: 100% !important;
+  height: auto;
+}
+.normal {
+  font-family: Georgia, sans-serif;
+  margin-top: 3em;
+  text-align: center;
+}
+.swipers{
+  margin:0 -20px;
+}   
+.swiperTitle {
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: -1px;
+}
+.welcome {
+  height: 328px;
+  background: url(../assets/yay.jpg) no-repeat center 0;
+  background-size: 388px 328px;
+}
+
+.list {
+  font-size: 1.2em;
+  margin-top: 1.8em;
+  list-style: none;
+  line-height: 1.5em;
+}
+.appIcons{
+  display: flex;
+  justify-content: center;
+  img{
+    width: 45px;
+    height: auto;
+  }
+  .wechatRow{
+    position: relative;
+    .hideWechat{
+      display: none;
+      width: 70px;
+      position: absolute;
+      left: 0px;
+      bottom: 35px;
+    }
+    &:hover{
+      .hideWechat{
+        display: block;
+      }
+    }
+  }
+}
+
+.list code {
+  background: #f7f7f7;
+}
+.boxSlider{
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: 0.7%;
+  .appIcons{
+    position: relative;
+    .wechatcode{
+      width: 70px; 
+      position: absolute; 
+      left: 50px;
+      bottom: 0px; 
+      display: none;
+    }
+  }
+  .boxRow{
+    margin: 0;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 0.7%;
+    display: flex;
+    justify-content: space-between;
+    .atcTitle{
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .smIocn{
+
+    }
+    .atcContent{
+      margin-bottom: 10px;
+      p{
+        font-size: 99%;
+        font-weight: 200;
+        line-height: 1.5;
+      }
+    }
+    .content{
+      box-sizing: border-box;
+      padding: 0 20px;
+      color:#333;
+      text-align: justify;
+    }
+    .imgContent{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      font-size: 14px;
+      .tagTitle{
+        display: flex;
+        font-size: 1.8em;
+        width: 140px;
+        height: 50px;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        white-space: nowrap;
+        .tagsText{
+          width: 100%;
+          height: 100%;
+          display: flex;
+          position: absolute;
+          z-index: 99;
+          left: 0;
+          top: 0;
+          justify-content: center;
+          align-items: center;
+          font-size: 99%;
+        }
+        .tags{
+          position: absolute;
+          z-index: 1;
+          background-color: #fff;
+          opacity: 0.5;
+          display: flex;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .coverLink{
+        // display: flex;
+        // justify-content: center;
+        display: block;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .mailBox{
+      .hrLine{
+        background: #862d2c;
+        border: 0;
+        height: 1px;
+        margin: 24px 0;
+        margin-bottom: 1.714285714rem;
+        width: 100%;
+      }
+      .cells{
+        display: flex;
+        .mailIcon{
+          width: 35px;
+          height: 35px;
+          margin-right: 10px;
+        }
+        .mailBtn{
+          padding: 0 5px;
+          font-size: 16px;
+          border: 1px solid #333;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-width: 92px;
+          position: relative;
+          img{
+            min-width: 92px;
+            height: auto;
+            display: none;
+            position: absolute;
+            top: -108px;
+            left: 0;
+          }
+          &:hover{
+            img{
+              display: block;
+            }
+          }
+          a{
+            min-width: 92px;
+            cursor: pointer;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            &:hover{
+              color:#333;
+            }
+          }
+        }
+      }
+    }
+    .smaller{
+      // float: left;
+      width: 33.33%;
+      background-color: #e7e7e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // min-height: 320px;
+      font-size: 14px;
+    }
+    .larger{
+      // float: right;
+      width: 66%;
+      background-color: #e7e7e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // min-height: 320px;
+      height: 100%;
+      &::after{
+        display: table;
+        content: ' ';
+        clear:both;
+      }
+    }
+  }
+}
+div[data-lang="en-US"]{
+  .tagTitle{
+    width: 35% !important;
+  }
+}
+.bottomRow{
+  margin-bottom: 0.7%;
+  font-size: 14px;
+  .tagCell{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 50px;
+    cursor: pointer;
+    .tagsText,
+    .tags{
+      width: 100%;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .tags{
+      background-color: #fff;
+      opacity: 0.5;
+      display: block;
+      z-index: 1;
+    }
+    .tagsText{
+      font-size: 1.8em;
+      z-index: 9;
+      color:#333;
+      text-align: center;
+      line-height: 50px;
+    }
+  }
+  .leftCell{
+    position: relative;
+    width: 49.7%;
+    display: inline-block;
+  }
+  .rightCell{
+    position: relative;
+    width: 49.7%;
+    display: inline-block;
+    float: right;
+    clear: right;
+  }
+}
+@media (max-width: 1024px) {
+  .boxRow{
+    display: block !important;
+  }
+  .larger,
+  .smaller{
+    min-height: 320px;
+    width: 100% !important;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #fff;
+  }
+  .rightCell,
+  .leftCell{
+    float: none !important;
+    display: block !important;
+    clear: both !important;
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+  .bottomRow{
+    margin-bottom: 60px;
+  }
+  .coverLink{
+    width: 100%;
+    overflow: hidden;
+    img{
+      height: auto !important;
+      width: 100% !important;
+      max-width: none;
+    }
+  }
+}

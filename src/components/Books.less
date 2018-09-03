@@ -1,0 +1,109 @@
+.Books{
+  .calendarBox{
+    width: 300px;
+    border: '1px solid #333';
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    margin-left: 25px;
+  }
+  .rightModal{
+    width: 382px;
+    position: fixed;
+    z-index: 99999;
+    top: 35%;
+    right: 0;
+    background: #333;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0.9;
+    color:#fff;
+    transform: translateX(382px);
+
+  }
+  .toolbox{
+    transform: translateX(-40px);
+    margin-left: -52px;
+    margin-top: -20px;
+    position: absolute;
+    z-index: 9999;
+    opacity: 0.9;
+    border-top:2px solid #555; 
+    margin-right: 20px; 
+    div{
+      border: 2px solid #555;
+      border-right: 0;
+      border-top:0; 
+      box-sizing: border-box;
+    }
+    img{
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+  div[data-books="true"]{
+    &:hover{
+      transform: translateX(0) !important;
+      .toolbox{
+        transform: translateX(0);
+      }
+    }
+  }
+  .tableTitle{
+    text-align: center;
+    padding-bottom: 10px;
+  }
+  .bookTable{
+    background-color: #fff;
+    width: 100%;
+    td{
+      color:#333;
+      border: 1px solid #333;
+      font-size: 12px;
+      text-align: center;
+      &:nth-child(odd){
+        width: 35%;
+      }
+      &:nth-child(even){
+        width: 65%;
+      }
+      input{
+        border: 0;
+        text-align: left;
+      }
+    }
+  }
+  .tableFooter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    .Btn{
+      padding: 2px 15px;
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+  }
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 800px) {
+
+}
+@media (max-width: 880px) {
+
+}
+@media (max-width: 960px) {
+
+}
+@media (max-width: 1024px) {
+  .toolbox{
+    transform: translateX(-5px) !important;
+  }
+}
+
+@media (min-width: 1024px){
+
+}

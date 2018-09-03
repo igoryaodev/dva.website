@@ -1,0 +1,194 @@
+.activity{
+  img{
+    width: 100% !important;
+    height: auto !important;
+  }
+  .headerTopImg{
+    width: 100%;
+  }
+  .activityContent{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .offset{
+      flex: 2;
+    }
+    .row{
+      box-sizing: border-box;
+      flex: 9;
+      padding-right: 100px;
+    }
+  }
+  .actTitle{
+    color:#872D2D;
+    font-size: 18px;
+    height: 80px;
+    line-height: 80px;
+  }
+  .actRows{
+    display: flex;
+    border-top: 1px solid #872D2D;
+    padding: 30px 0;
+    box-sizing: border-box;
+    .briefTitle{
+      color:#872D2D;
+      margin-bottom:10px;
+      font-size: 18px;
+    }
+    .brief{
+      color:#333;
+      white-space: pre-line;
+      font-size:14px;
+    }
+    .cellHd{
+      flex:7;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    .cellMd {
+      flex:5;
+      padding: 0 15px;
+      box-sizing: border-box;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  /*
+  * @详情
+  */
+  .activityDetail{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    .activityDelContent{
+      text-align: left;
+      box-sizing: border-box;
+      width: 1004px;
+      .detailTitle{
+        font-size: 23px;
+        margin: 30px auto;
+        font-weight: 500;
+        color: #862d2c;
+      }
+    }
+  }
+  /*
+  * @公教
+  */
+  .eduRow{
+    width: 100%;
+    &::after{
+      display: table;
+      content: ' ';
+      clear: both;
+    }
+    .rowbox{
+      margin-top: 10px;
+      .eduItem{
+        float: left;
+        width: 31.6555%;
+        margin-right: 2.5%;
+        margin-bottom: 4.5%;
+        font-size: 14px; 
+        color:#333;
+        &:nth-child(3n+3){
+          margin-right: 0;
+        }
+        .eduTitle{
+          font-weight: 500;
+          margin:8px 0 10px 0 !important;
+        }
+        .eduTime{
+          color:#999;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  /*
+  * @场地
+  */
+  .venue{ 
+    width: 1004px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 0 10px;
+    padding-bottom: 25px;
+    .venueTitle{
+      font-size: 22px;
+      margin: 30px auto;
+      color: #862d2c;
+    }
+    .venueContent{
+      font-size:15px;
+      color:#555;
+      .rules{
+        li{
+          margin-bottom: 10px;
+        }
+      }
+      p{
+        line-height: 25px;
+        &::after{
+          content: ' ';
+          display: table;
+          height: 5px;
+        }
+      }
+    }
+  }
+}
+  @media (max-width: 768px){
+  }
+  @media (max-width: 800px){
+  
+  }
+  @media (max-width: 880px){
+
+  }
+  @media (max-width: 960px){
+  
+  }
+  @media (max-width: 1024px){
+    .activityContent{
+      padding: 0 15px;
+      box-sizing: border-box;
+      .offset{
+        display: none !important;
+      }
+      .row{
+        padding-right: 0 !important;
+      }
+      .actRows{
+        display: block !important;
+        .cellHd{
+          margin-bottom: 20px;
+        }
+        .cellMd{
+        }
+      }
+    }
+    .activityDetail{
+      width: 100% !important;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+    .venueBody{
+      .venue{
+        width: 100% !important;
+        padding: 0 40px;
+        box-sizing: border-box;
+      }
+      width: 100% !important;
+    }
+    .eduRow{
+      .eduItem{
+        width: 100% !important;
+        box-sizing: border-box;
+        padding: 0 10px;
+      }
+    }
+  }

@@ -1,0 +1,73 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn build
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  10.6.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "private": true,
+    "scripts": {
+      "start": "roadhog server",
+      "build": "roadhog build",
+      "lint": "eslint --ext .js src test",
+      "precommit": "npm run lint"
+    },
+    "dependencies": {
+      "@antv/data-set": "^0.8.0",
+      "@babel/polyfill": "^7.0.0-beta.36",
+      "antd": "^3.6.6",
+      "antd-mobile": "^2.2.2",
+      "axios": "^0.18.0",
+      "date-time": "^2.1.0",
+      "dva": "^2.3.1",
+      "moment": "^2.22.2",
+      "react": "^16.2.0",
+      "react-dom": "^16.2.0",
+      "react-intl": "^2.4.0",
+      "url-polyfill": "^1.0.10"
+    },
+    "devDependencies": {
+      "babel-plugin-import": "^1.8.0",
+      "babel-plugin-dva-hmr": "^0.3.2",
+      "eslint": "^4.14.0",
+      "eslint-config-umi": "^0.1.1",
+      "eslint-plugin-flowtype": "^2.34.1",
+      "eslint-plugin-import": "^2.6.0",
+      "eslint-plugin-jsx-a11y": "^5.1.1",
+      "eslint-plugin-react": "^7.1.0",
+      "husky": "^0.12.0",
+      "redbox-react": "^1.4.3",
+      "roadhog": "^2.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c roadhog build
+  Directory: /Users/igor/Documents/vart/dva.website
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/lib/node_modules/yarn/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:182:13)
+      at maybeClose (internal/child_process.js:961:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:248:5)

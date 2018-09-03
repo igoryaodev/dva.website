@@ -1,0 +1,32 @@
+.searchResult {
+  .searchTitle {
+    font-size: 16px;
+    color: #333;
+    padding-bottom: 24px;
+  }
+}
+.searchItem {
+  padding-top: 24px;
+}
+
+.searchItemContent {
+  margin: 20px 0;
+  p{
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow : hidden;
+  }
+}
+.article{
+  border-top: 1px solid #ccc;
+}
+
+@media (max-width: 1024px){
+  .searchResult{
+    box-sizing: border-box;
+    padding: 0 15px;
+    margin-top: 25px;
+  }
+}

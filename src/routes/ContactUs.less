@@ -1,0 +1,98 @@
+.contactContainer {
+  background: #862d2c;
+  width: 100%;
+}
+.contactArticle {
+  padding-top: 30px;
+  text-align: center;
+}
+.contactHd {
+  h1 {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: normal;
+  }
+  p {
+    color: #fff;
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+}
+.contactForm {
+  width: 420px;
+  margin: 30px auto;
+  padding: 10px 50px;
+  background: #fff;
+  padding-bottom: 20px;
+}
+.ant-form-item-required:before{
+  content: ' ' !important;
+}
+label[data-content="true"]{
+  &:before{
+    content: ' ' !important;
+  }
+  &:after{
+    content: '*' !important;
+  }
+}
+@media (max-width: 400px) {
+  .contactForm {
+    width: 300px;
+    margin: 30px auto;
+    padding: 10px 25px;
+    background: #fff;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+}
+@media (max-width: 480px) {
+  .contactForm {
+    width: 350px;
+    margin: 30px auto;
+    padding: 10px 35px;
+    background: #fff;
+    padding-bottom: 20px;
+    text-align: left;
+  }
+}
+:global {
+  .ant-form-item-label {
+    line-height: 32px;
+  }
+  .ant-form-item-label label {
+    font-weight: 400;
+    color: #862d2c;
+  }
+  .ant-input {
+    border-color: #862d2c;
+    height: 28px;
+    border-radius: 0;
+  }
+  .ant-select-selection {
+    border-color: #862d2c;
+    border-radius: 0;
+  }
+  .ant-form-item {
+    margin-bottom: 10px;
+  }
+  .ant-form-item [class^="ant-col-"] > .ant-form-item:only-child {
+    margin-bottom: 0;
+  }
+  .ant-btn-primary {
+    background: #fff;
+    color: #862d2c;
+    border-radius: 0;
+    border-color: #862d2c;
+    &:hover {
+      background: #fff;
+      color: #862d2c;
+      border-color: #862d2c;
+    }
+    &:focus {
+      background: #fff;
+      color: #862d2c;
+      border-color: #862d2c;
+    }
+  }
+}
