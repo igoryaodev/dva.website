@@ -1,16 +1,18 @@
-import { newBooks } from '../services/api'
-import { notification } from 'antd'
+import { queryTopImages } from '../services/api'
+// import { notification } from 'antd'
 
 export default {
 
-  namespace: 'books',
+  namespace: 'topimages',
 
   state: {
   },
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
-
+      dispatch({
+        type: 'fetch'
+      })
     },
   },
 
@@ -20,18 +22,21 @@ export default {
         type: 'save',
         payload: {},
       });
-      const res = yield call(newBooks, payload)
+      const res = yield call(queryTopImages, payload)
       yield put({ 
         type: 'save',
         payload: res,
       })
-      notification.success({"message":"提交成功"})
+      // notification.success({"message":"提交成功"})
     },
   },
 
   reducers: {
     save(state, { payload }) {
-      return Object.assign({}, state, payload)
+      return {
+        ...state,
+        ...payload
+      }
     },
   },
 

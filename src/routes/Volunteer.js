@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Row, Col } from 'antd';
+import HeadAds from '../components/HeadAds'
 import { changeTitle } from '../utils/utils'
 import styles from './Volunteer.less';
 
@@ -20,9 +21,7 @@ class Volunteer extends Component {
     changeTitle(header.volunteering)
     return (
       <div className={styles.internContent}>
-        <div className={styles.hdImg}>
-          <img style={{height: '100%', width: '100%'}} src={require('../assets/shadows.jpg')} alt="" />
-        </div>
+        <HeadAds codeString={'header.volunteering'} />
         <div className={styles.volunteerBox}>
           <div id="description" dangerouslySetInnerHTML={{
             __html: lang == 'en-US' ? detail.webInfo_En : detail.webInfo

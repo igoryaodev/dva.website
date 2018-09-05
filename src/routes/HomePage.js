@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import { Link } from 'dva/router';
+import { Link, routerRedux } from 'dva/router';
 import { Carousel, Input } from 'antd'
 import { qiniu, changeTitle } from '../utils/utils'
 
@@ -60,13 +60,23 @@ class HomePage extends Component {
     }
     delay()
   }
+  navigatorTo(e) {
+    let { item } = e.target.dataset
+    item = JSON.parse(item)
+    console.log(JSON.stringify(item))
+    const { dispatch } = this.props
+    if(item.YUZMActivityDto) {
+      if(item.activityId > 0) dispatch(routerRedux.push(`/activityDetail/${item.activityId}`))
+    }else {
+      if(item.url) window.open(item.url)
+    }
+  }
 
   render() {
     const { language, homepage } = this.props
     const { home, lang, header } = language
     const { list } = homepage
     changeTitle(header.home)
-    console.log(header.home)
     return (
       <div data-lang={lang} className={styles.HomePage}>
         <div className={styles.swipers}>
@@ -76,12 +86,11 @@ class HomePage extends Component {
               autoplay>
               {
                 list.map(item => {
-                  let url = item.activityId ? `/activityDetail/${item.activityId}` : '#'
+                  const data = JSON.stringify(item)
                   return(
-                    <Link key={item.activityId}  to={url}>
-                      <img className={styles.swiperImage} src={qiniu(item.imageDto)} alt='img' />
-                    </Link>
+                    <img key={item.activityId} data-item={data} onClick={(e) => this.navigatorTo(e)} className={styles.swiperImage} src={qiniu(item.imageDto)} alt='img' />
                   )
+                 
                 })
               }
               </Carousel>

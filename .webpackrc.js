@@ -18,7 +18,8 @@ export default {
   hash: true,
   proxy: {
     '/api': {
-      target: 'http://localhost:8080',
+      target: 'http://yuzm.dev.vart.cc/api',
+      // target: 'http://172.16.1.200:1234',
       changeOrigin: true,
       pathRewrite: { '^/api': '' },
     },

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
+import HeadAds from '../components/HeadAds'
 import styles from './Activity.less';
 import { translate, qiniu, changeTitle } from '../utils/utils'
-const headerImg = require('../assets/activity/venue-rental.jpg')
 
 @connect(({
   language,
@@ -29,9 +29,7 @@ export default class ActivityVenue extends Component {
     return (
       <div className={styles.activity}>
         <div className={styles.venueBody}>
-          <div>
-            <img src={headerImg} alt="img"/>
-          </div>
+          <HeadAds codeString={'header.artvenue'} />
           {
             events && (
               <div className={styles.venue}>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { connect } from 'dva';
 import { Row, Col } from 'antd';
+import HeadAds from '../components/HeadAds'
 import { changeTitle } from '../utils/utils'
 import styles from './NewsList.less';
 
@@ -37,9 +38,7 @@ class NewsList extends Component {
     })
     return (
       <div className={styles.newsContent}>
-        <div className={styles.hdImg}>
-          <img style={{height: '100%', width: '100%'}} src={require('../assets/yuz_top_pic1.jpg')} alt="" />
-        </div>
+        <HeadAds codeString={'header.press'} />
         <div className={styles.container}>
           <Row className={styles.newsWrap}>
             <Col span={24}>

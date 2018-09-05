@@ -49,7 +49,7 @@ export default class Books extends Component {
     }
     if(!books.name) 
       return notification.error({
-        message: '名字不能为空'
+        message: '姓名不能为空'
       })
     if(!books.email)
       return notification.error({

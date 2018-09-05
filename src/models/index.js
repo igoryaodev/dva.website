@@ -4,7 +4,8 @@ const models = [
   require('./language'),
   require('./books'),
   require('./test'),
-  require('./page')
+  require('./page'),
+  require('./topimages')
 ]
 
 export default models 

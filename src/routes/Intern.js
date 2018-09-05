@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Row, Col } from 'antd';
+import HeadAds from '../components/HeadAds'
 import { changeTitle } from '../utils/utils'
 
 import styles from './Intern.less';
@@ -21,9 +22,7 @@ class Intern extends Component {
     changeTitle(header.internship)
     return (
       <div className={styles.internContent}>
-        <div className={styles.hdImg}>
-          <img style={{height: '100%', width: '100%'}} src={require('../assets/yuzm-intern.jpg')} alt="" />
-        </div>
+        <HeadAds codeString={'header.internship'} />
         <div className={styles.internBox}>
           <div id="description" dangerouslySetInnerHTML={{
             __html: lang == 'en-US' ? detail.webInfo_En : detail.webInfo

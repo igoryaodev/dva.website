@@ -32,6 +32,15 @@ export async function newBooks(params) {
   })
 }
 /*
+* @页面顶部图片
+*/
+export async function queryTopImages(params) {
+  return request(`/api/YUZMTops`, {
+    method: 'GET',
+    data: params
+  })
+}
+/*
 * @测试
 */
 export async function test(params) {

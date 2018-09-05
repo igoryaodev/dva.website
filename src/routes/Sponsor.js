@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Row, Col } from 'antd';
+import HeadAds from '../components/HeadAds'
+
 import { changeTitle } from '../utils/utils'
 
 import styles from './Sponsor.less';
@@ -20,9 +22,7 @@ class Sponsor extends Component {
     changeTitle(sponsor.sponsor)
     return (
       <div className={styles.internContent}>
-        <div className={styles.hdImg}>
-          <img style={{height: '100%', width: '100%'}} src={require('../assets/yuzm-support.jpg')} alt="" />
-        </div>
+        <HeadAds codeString={'sponsor.sponsor'} />
         <div className={styles.sponsorBox}>
           <div id="description" dangerouslySetInnerHTML={{
             __html: lang == 'en-US' ? detail.webInfo_En : detail.webInfo
