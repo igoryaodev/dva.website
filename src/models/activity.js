@@ -5,7 +5,6 @@ export default {
   namespace: 'activity',
 
   state: {
-    loading: true
   },
 
   subscriptions: {
@@ -26,12 +25,26 @@ export default {
         payload: res,
       });
     },
+    *clear({ payload }, { call, put }) {
+      yield put({
+        type: 'clearstate',
+        payload: ''
+      })
+    }
   },
 
   reducers: {
     save(state, { payload }) {
-      return Object.assign({}, state, payload)
+      return {
+        ...state,
+        ...payload
+      }
     },
+    clearstate({ payload }) {
+      return {
+        ...payload
+      }
+    }
   },
 
 };

@@ -67,7 +67,7 @@ export default class Activity extends Component {
       let d, start, end, date, time
       if(lang === 'zh-CN') {
         d = item.startTime.split('T')[0].split('-')
-        date = `${d[1]}月 ${d[2]}日`
+        date = `${d[1]}月${d[2]}日`
       }else {
         d = new Date(item.startTime).toString()
         d = d.split(' ')
@@ -101,7 +101,7 @@ export default class Activity extends Component {
                         <div className={styles.row}>
                           <div className={styles.actTitle}>
                             {
-                              projectText()
+                              Number(params.type) === 2 ? 'Yuz • The Cool Noise' : projectText()
                             }
                           </div>
                           {

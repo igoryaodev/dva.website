@@ -63,7 +63,7 @@ class HomePage extends Component {
   navigatorTo(e) {
     let { item } = e.target.dataset
     item = JSON.parse(item)
-    console.log(JSON.stringify(item))
+    // console.log(JSON.stringify(item))
     const { dispatch } = this.props
     if(item.YUZMActivityDto) {
       if(item.activityId > 0) dispatch(routerRedux.push(`/activityDetail/${item.activityId}`))

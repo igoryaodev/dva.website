@@ -25,55 +25,51 @@ export default class Books extends Component {
     left: true
   }
   componentDidMount() {
-    const inputs = document.querySelectorAll('input')
-    const books = {}
-    const self = this
-    for(var item of inputs){
-      if(item && item.tagName){
-        item.addEventListener('change', (e) => {
-          books[e.target.name] = e.target.value
-          self.setState({
-            books,
-          })
+    
+  }
+  bindHandle(e) {
+    this.state.books[e.target.name] = e.target.value
+  }
+  handleSubmit(){
+    const { dispatch, language } = this.props
+    const msg = language.books
+    let { books } = this.state, 
+        _books;
+    if(books) {
+      if(!books.inTime)
+        return notification.error({
+          message: '预约时间不能为空'
         })
+      if(books.inTime && !books.inTime.match(/\T/)) {
+        books.inTime = books.inTime + 'T00:00:00'
       }
+      if(!books.name) 
+        return notification.error({
+          message: '姓名不能为空'
+        })
+      if(!books.email)
+        return notification.error({
+          message: '邮箱不能为空'
+        })
+      if(books.email && !books.email.match(/\w+@/))
+        return notification.error({
+          message: '邮箱格式不正确'
+        })
     }
+    dispatch({
+      type:'books/fetch',
+      payload: books
+    })
+    _books = document.querySelector('div[data-modal]')
+    _books.dataset.books = false
+    this.setState({
+      showCalendar: false,
+      showbooks: false,
+      left: false,
+      books: {}
+    })
   }
- handleSubmit(){
-  const { dispatch, language } = this.props
-  const msg = language.books
-  let { books } = this.state
-  if(books) {
-    if(books.inTime && !books.inTime.match(/\T/)) {
-      books.inTime = books.inTime + 'T00:00:00'
-    }
-    if(!books.name) 
-      return notification.error({
-        message: '姓名不能为空'
-      })
-    if(!books.email)
-      return notification.error({
-        message: '邮箱不能为空'
-      })
-    if(books.email && !books.email.match(/\w+@/))
-      return notification.error({
-        message: '邮箱格式不正确'
-      })
-  }
-  dispatch({
-    type:'books/fetch',
-    payload: books
-  })
-  const self = this
-  let _books = document.querySelector('div[data-modal]')
-  _books.dataset.books = false
-  this.setState({
-    showCalendar: false,
-    showbooks: false,
-    left: false
-  })
- }
- showModal(){
+  showModal(){
     const self = this
     let books = document.querySelector('div[data-modal]')
     if(books.dataset.books && books.dataset.books === 'true') return
@@ -84,31 +80,28 @@ export default class Books extends Component {
         left: true
       })
     })
- }
- showBooks(e) {
-  this.setState({
-    showCalendar: false,
-    showbooks: true,
-    left: false
-  })
-  this.showModal()
- }
- showCalendar(e){
-  this.setState({
-    showCalendar: true,
-    showbooks: false,
-    left: false
-  })
-  this.showModal()
- }
-// name
-// email phone peopleCount inTime guide
+  }
+  showBooks(e) {
+    this.setState({
+      showCalendar: false,
+      showbooks: true,
+      left: false
+    })
+    this.showModal()
+  }
+  showCalendar(e){
+    this.setState({
+      showCalendar: true,
+      showbooks: false,
+      left: false
+    })
+    this.showModal()
+  }
   render() {
     const { language } = this.props
     const { books } = language
     const { showbooks, showCalendar, left } = this.state 
 
-    // const { getFieldDecorator } = form
 
     return (
       <div className={styles.Books}>
@@ -135,28 +128,28 @@ export default class Books extends Component {
                         <tr>
                           <td>{books.name}</td>
                           <td>
-                            <Input type="text" name="name" autoComplete="off" />
+                            <Input type="text" name="name" onChange={(e) => this.bindHandle(e)} autoComplete="off" />
                           </td>
                         </tr>
                         <tr>
                           <td>{books.email}</td>
-                          <td><Input type="email" name="email" autoComplete="off"/></td>
+                          <td><Input type="email" name="email" onChange={(e) => this.bindHandle(e)} autoComplete="off"/></td>
                         </tr>
                         <tr>
                           <td>{books.cell}</td>
-                          <td><Input type="number" name="phone" maxLength="11" autoComplete="off"/></td>
+                          <td><Input type="number" name="phone" onChange={(e) => this.bindHandle(e)} maxLength="11" autoComplete="off"/></td>
                         </tr>
                         <tr>
                           <td>{books.count}</td>
-                          <td><Input type="number" name="peopleCount" maxLength="4" autoComplete="off"/></td>
+                          <td><Input type="number" name="peopleCount" onChange={(e) => this.bindHandle(e)} maxLength="4" autoComplete="off"/></td>
                         </tr>
                         <tr>
                           <td>{books.time}</td>
-                          <td><Input type="date" name="inTime" autoComplete="off"/></td>
+                          <td><Input type="date" name="inTime" onChange={(e) => this.bindHandle(e)} autoComplete="off"/></td>
                         </tr>
                         <tr>
                           <td>{books.tourguide}</td>
-                          <td><Input type="text" name="guide" autoComplete="off"/></td>
+                          <td><Input type="text" name="guide" onChange={(e) => this.bindHandle(e)} autoComplete="off"/></td>
                         </tr>
                       </tbody>
                     </table>

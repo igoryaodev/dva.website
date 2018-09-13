@@ -33,7 +33,7 @@ class Visit extends Component {
     this.setState({
       visitHeight: e.target.height + 'px'
     })
-    console.log(e.target.height)
+    // console.log(e.target.height)
   }
 
   render() {

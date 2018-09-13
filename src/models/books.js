@@ -21,17 +21,14 @@ export default {
         payload: {},
       });
       const res = yield call(newBooks, payload)
-      yield put({ 
-        type: 'save',
-        payload: res,
-      })
-      notification.success({"message":"提交成功"})
+      if(res.status === 200)
+        notification.success({"message":"提交成功"})
     },
   },
 
   reducers: {
     save(state, { payload }) {
-      return Object.assign({}, state, payload)
+      return {}
     },
   },
 
